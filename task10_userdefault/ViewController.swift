@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
-        
     }()
     private let textField1: UITextField = {
         var textfield = UITextField()
@@ -111,14 +110,11 @@ class ViewController: UIViewController {
             sumLabel.text = "\(result)"
             results.append("\(result)")
             UserDefaults.standard.set(results, forKey: "sumsave")
-            
         } else {
             sumLabel.text = "Please fill in both text fields."
         }
     }
-
     @objc func savebuttonTapped(){
-        
         let results = UserDefaults.standard.array(forKey: "sumsave") as? [String] ?? [String]()
         if results.isEmpty == false{
             savesLabel.text = "Last saved operation: \(results.joined(separator: ","))"
